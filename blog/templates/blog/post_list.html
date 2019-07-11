@@ -7,17 +7,14 @@
 		<div>
 			<h1><a href="/">Django Girls Blog</a></h1>
 		</div>
-
+			{% for post in posts %}
 		<div>
-			<p>published: 28.06.2019, 12:14</p>
-			<h2><a href="">My first post</a></h2>
-			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-		</div>
-
-		<div>
-			<p>published: 29.06.2019, 16:30</p>
-			<h2><a href="">My second post</a></h2>
-			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-		</div>
+			<!-- post.title, post.text Мы обращаемся к различным полям нашей модели Post -->
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<!-- linebreaksbr прогоняет текст через фильтр для преобразования переносов строк в параграфы -->
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+			{% endfor %}
 	</body>
 </html>

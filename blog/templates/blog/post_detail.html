@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <html>
 {% block content %}
-	{% for post in posts %}
 	<div class="post">
+	{% if post.published_date %}
 		<div class="date">
 <!-- post.title, post.text Мы обращаемся к различным полям нашей модели Post -->
 			<p>{{ post.published_date }}</p>
 		</div>
-		<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+	{% endif %}
+		<h1>{{ post.title }}</h1>
 <!-- linebreaksbr прогоняет текст через фильтр для преобразования переносов строк в параграфы -->
 		<p>{{ post.text|linebreaksbr }}</p>
 	</div>
-	{% endfor %}
 	{% endblock %}
 </html>

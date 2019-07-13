@@ -10,4 +10,6 @@ urlpatterns = [
 	# <int:pk> — эта часть означает, что Django ожидает целочисленное значение и преобразует его в представление — переменную pk.
 	# / — затем нам нужен еще один символ / перед тем, как адрес закончится.
 	path('post/<int:pk>/', views.post_detail, name='post_detail'),
+	path('post/new/', views.post_new, name='post_new'),
+	path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
 ]

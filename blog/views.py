@@ -2,7 +2,9 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
-# Точка перед models означает текущую директорию или текущее приложение. Поскольку views.py и models.py находятся в одной директории, мы можем использовать точку . и имя файла (без расширения .py). Затем мы импортируем модель (Post).
+# Точка перед models означает текущую директорию или текущее приложение. 
+# Поскольку views.py и models.py находятся в одной директории, мы можем использовать точку . и имя файла (без расширения .py). 
+# Затем мы импортируем модель (Post).
 from .models import Post
 from .forms import PostForm
 
